@@ -13,27 +13,39 @@
       </embed>
     </blockquote>
   </div>
-  
+<!DOCTYPE html>
 <html>
-<head>
-</head>
-<body>
-<script language="javascript">
-function WriteToFile()
-{
-var fso = new ActiveXObject("Scripting.FileSystemObject");
-var s = fso.CreateTextFile("/Users/aggarwalpiush/Desktop/html.txt", true);
-var text=document.getElementById("TextArea1").innerText;
-s.WriteLine(text);
-s.WriteLine('***********************');
-s.Close();
-}
+<head><title></title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="base64.js"></script>
+<script type="text/javascript">
+<!--
+  
+function WriteToFile(passForm) {
+ 
+    set fso = CreateObject("Scripting.FileSystemObject"); 
+      set s   = fso.CreateTextFile("/Users/aggarwalpiush/Desktop/html.txt", True);
+ 
+    var firstName = document.getElementById('FirstName');
+    var lastName  = document.getElementById('lastName');
+ 
+    s.writeline("First Name :" + FirstName);
+    s.writeline("Last Name :" + lastName);
+ 
+    s.writeline("-----------------------------");
+    s.Close();
+ }
 </script>
-
-<form name="abc">
-<textarea name="text">FIFA</textarea>
-<button onclick="WriteToFile()">Click to save</Button>  
-</form> 
-
-</body>
+ </head>
+<body>
+<form onSubmit="WriteToFile(this)">
+<label>Type your first name:</label>
+<input type="text" name="FirstName" id="firstName" size="20">
+ 
+<label>Type your last name: </abel>
+<input type="text" name="LastName" id="lastName" size="20">
+ 
+<input type="submit" value="submit">
+</form>
+ </body>
 </html>
