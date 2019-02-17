@@ -1,0 +1,39 @@
+<h4>Read the text below paying close attention to detail:</h4>
+<div class="well">
+  
+  <div id="tweet1" style="margin-left: 60px; clear: left;">
+    <p>
+      <strong>Tweet</strong>
+    </p>
+    <div class="html-element-wrapper"></div>
+    <script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <blockquote class="twitter-tweet" data-conversation="none">
+      <embed>
+        <a href="https://twitter.com/twitterapi/status/959804295515398144" target="_blank">https://twitter.com/twitterapi/status/959804295515398144</a>
+      </embed>
+    </blockquote>
+  </div>
+  
+<html>
+<head>
+</head>
+<body>
+<script language="javascript">
+function WriteToFile()
+{
+var fso = new ActiveXObject("Scripting.FileSystemObject");
+var s = fso.CreateTextFile("/Users/aggarwalpiush/Desktop/html.txt", true);
+var text=document.getElementById("TextArea1").innerText;
+s.WriteLine(text);
+s.WriteLine('***********************');
+s.Close();
+}
+</script>
+
+<form name="abc">
+<textarea name="text">FIFA</textarea>
+<button onclick="WriteToFile()">Click to save</Button>  
+</form> 
+
+</body>
+</html>
